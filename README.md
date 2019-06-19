@@ -1,6 +1,6 @@
 # Escalonamento de Intervalos
 
-O Problema
+## O Problema
 
 Um *intervalo* é um conjunto de números naturais consecutivos.  Um intervalo como  *{s,s+1,…,f−1,f}*  será denotado por  *(s,f)*. O primeiro número do par é o início do intervalo e o segundo é o término.  (As letras *s* e *f* lembram *start* e *finish* respectivamente.)
 
