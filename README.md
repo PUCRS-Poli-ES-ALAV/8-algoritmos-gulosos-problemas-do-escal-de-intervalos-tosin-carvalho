@@ -19,9 +19,11 @@ Usaremos a abreviatura *SDM* para a expressão subcoleção disjunta máxima.  N
 **Exemplo** 
 A figura abaixo especifica uma coleção de intervalos e uma sdm da coleção.  A SDM é indicada pelos 1 do seu vetor característico X:
 
+```javascript
 s 4 6 13 4 2 6 7  9  1 3  9
 f 8 7 14 5 4 9 10 11 6 13 12
 X 0 1 1  0 1 0 0  1  0 0  0
+```
 
 É fácil verificar que a coleção de 4 intervalos definida por x é disjunta. Mas não é óbvio que ela seja máxima. Você tem certeza de que não existem 5 intervalos disjuntos dois a dois?
 
