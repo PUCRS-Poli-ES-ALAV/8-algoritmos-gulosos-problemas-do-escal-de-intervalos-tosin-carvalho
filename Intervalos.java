@@ -6,4 +6,12 @@ public class Intervalos {
     this.minimo = min;
     this.maximo = max;
   }
+
+  public Integer getMin() {
+    return this.minimo;
+  }
+
+  public Integer getMax() {
+    return this.maximo;
+  }
 }
