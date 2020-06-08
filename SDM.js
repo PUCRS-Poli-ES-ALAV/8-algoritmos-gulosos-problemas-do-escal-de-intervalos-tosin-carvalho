@@ -1,30 +1,41 @@
-    let listaS = [2, 4, 1, 6, 4, 6, 7,   9, 9,   3, 13  ] ;
-    let listaF = [4, 5, 6, 7, 8, 9, 10, 11,  12,  13, 14];
-    console.log(Guloso(listaS, listaF, 11));
-    
-    // function Guloso(s, f, n) {
-    //     let x = []
-    //     let i= 0
-    //     while(i <= n) {
-    //         x.push(f[i])
-    //         var k = i + 1
-    //         while( k <= n && s[k] < f[i]) {
-    //             k = k+1
-    //         }
-    //         i = k
-    //     }
-    //     return x;
-    // }
+let listaS = [4, 6, 13, 4, 2, 6, 7, 9, 1, 3, 9];
+let listaF = [8, 7, 14, 5, 4, 9, 10, 11, 6, 13, 12];
 
-    function Guloso (s, f, n) {
-        f[0] = Number.MIN_VALUE;
-        let x = [];
-        let i = 0;
-        for(let k = 1; k < n; k++) {
-            if(s[k] > f[i]) {
-                x.push({S: s[k] , F: f[k]})
-                i = k
+console.log(Guloso(listaS, listaF, 11).toString())
+
+
+function Guloso (ls, lf, n) {
+    const { s, f } = sort(ls, lf);
+    let x = [];
+    let i = 0;
+    for( let k = 1; k < n; k++ ) {
+        if( s[k] >= f[i] ) {
+            x.push(1);
+            i = k
+        } else {
+            x.push(0);
+        }
+    }
+    return x;
+}
+
+function sort(s, f) {
+    let flag;
+    do {
+        flag = false;
+        for (var i=0; i < s.length - 1; i++) {
+            if (f[i] > f[i+1]) {
+                f[i] = f[i] ^ f[i+1];
+                f[i+1] = f[i+1] ^ f[i];
+                f[i] = f[i] ^ f[i+1];
+    
+                s[i] = s[i] ^ s[i+1];
+                s[i+1] = s[i+1] ^ s[i];
+                s[i] = s[i] ^ s[i+1];
+
+                flag = true;
             }
         }
-        return x;
-    }
+    } while (flag);
+    return {s, f}
+}
